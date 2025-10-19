@@ -1,0 +1,8 @@
+/bin
+/blobs
+image.tar
+index.json
+manifest.json
+oci-layout
+repositories
+terraform
