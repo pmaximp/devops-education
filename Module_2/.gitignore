@@ -1,0 +1,5 @@
+
+*.tfstate
+*.tfstate.*
+.terraform*
+!Homework_1/Task_1/*.tfstate
