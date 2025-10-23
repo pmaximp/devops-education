@@ -2,7 +2,7 @@
 
 ## Задание 1
 
-2. Согласно .gitignore личную и секретную информацию можно хранить в файле personal.auto.tfvars. Файл .terraformrc находится в домашнем каталоге пользователя для настройки registry для загрузки плагинов или провайдеров. Файл .tfstate описывает текущую конфигурацию или, если так можно сказать, в результаты крайнего `terraform apply`.
+2. Согласно .gitignore личную и секретную информацию можно хранить в файле personal.auto.tfvars. Файл .terraformrc находится в домашнем каталоге пользователя для настройки registry для загрузки плагинов или провайдеров. Файл .tfstate описывает текущую конфигурацию или, если так можно сказать, результаты крайнего `terraform apply`.
 
 3. "result": "xkE3BF3bgDHLBhkf"
 
@@ -40,5 +40,5 @@
 
 Код запустился, предварительно также потребовалось настроить зеркала для загрузки плагинов и провайдеров. Для наглядности изменил название контейнера. Разницы в рамках запуска и работы [текущего](https://github.com/pmaximp/devops-education/tree/main/Module_2/Homework_1/Task_3/main.tf) кода не заметил. При применении более сложного кода, вероятно, они будут.
 
-![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_1/Task_2/images/image3_1.png)
-![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_1/Task_2/images/image3_2.png)
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_1/Task_3/images/image3_1.png)
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_1/Task_3/images/image3_2.png)
