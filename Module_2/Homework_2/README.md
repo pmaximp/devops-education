@@ -6,10 +6,8 @@
 
 ## Задание 1
 
-![alt text](Task_1/images/image1_1.png)
-![alt text](Task_1/images/image1_2.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_1/images/image1_1.png)
-![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_1/images/image1_2.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_1/images/image1_1.png)
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_1/images/image1_2.png)
 
 <u>Ответы на вопросы:</u>
 
@@ -23,22 +21,19 @@
 
 Прикладываю файл [main.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_2/main.tf) и [variables.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_2/variables.tf) после выполнения задания.
 
-![alt text](Task_2/images/image2.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_2/images/image2.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_2/images/image2.png)
 
 ## Задание 3
 
 Прикладываю файл [main.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_3/main.tf) и [vms_platform.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_3/vms_platform.tf) после выполнения задания.
 
-![alt text](Task_3/images/image3.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_3/images/image3.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_3/images/image3.png)
 
 ## Задание 4
 
 Прикладываю файл [outputs.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_4/outputs.tf). Не исключаю, что не доконца понял формулировку задания, но для вывода только ip-адресов воспользовался формирование через `jq`. Буду благодарен если расскажите как можно еще вывести только ip-адреса.
 
-![alt text](Task_4/images/image4.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_4/images/image4.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_4/images/image4.png)
 
 ## Задание 5
 
@@ -47,22 +42,19 @@
 Вопрос:
 >Если необходимо собрать значение из нескольких переменных, то мы можем сделать это только блоке `resources` или `data`?
 
-![alt text](Task_5/images/image5.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_5/images/image5.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_5/images/image5.png)
 
 ## Задание 6
 
 Прикладываю файл [main.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_6/main.tf), [vms_platform.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_6/vms_platform.tf), [locals.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_6/locals.tf) и [variables.tf](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_6/variables.tf) после выполнения задания. Также для удобства и тренировки переделал создание сетей с использованием map(object()).
 
-![alt text](Task_6/images/image6.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_6/images/image6.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_6/images/image6.png)
 
 ## Задание 7
 
 В качестве ответа прикладываю скриншот. На сколько успел разобраться для "вычленения" каких-либо специфичных параметров необходимо использовать функции. В этом случае использовал `length()` и `keys()`.
 
-![alt text](Task_7/images/image7.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_7/images/image7.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_7/images/image7.png)
 
 ## Задание 8
 
@@ -74,8 +66,7 @@
 
 Может, конечно, я вовсе не понял задание или только мне не понятно и остальных не будет проблем с этим заданием))
 
-![alt text](Task_8/images/image8.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_8/images/image8.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_8/images/image8.png)
 
 ## Задание 9
 
@@ -83,5 +74,4 @@
 
 P.S. В описании могут страдать сетевые формулировки если объяснять на пальцах и рисовать при этом, то получится лучше)
 
-![alt text](Task_9/images/image9.png)
-<!-- ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_9/images/image9.png) -->
+![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_2/Task_9/images/image9.png)
