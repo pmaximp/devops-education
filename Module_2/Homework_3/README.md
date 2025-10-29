@@ -28,7 +28,7 @@
 
 ## Задание 5
 
-Прикладываю файл [outputs.tf](https://github.com/pmaximp/devops-education/blob/main/Module_2/Homework_3/Task_4/outputs.tf) и скрин.
+Прикладываю файл [outputs.tf](https://github.com/pmaximp/devops-education/blob/main/Module_2/Homework_3/Task_5/outputs.tf) и скрин.
 
 ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_3/Task_5/images/image5.png)
 
@@ -44,7 +44,7 @@
 
 ## Задание 8
 
-Прикладываю исправленный файл шаблона [resolved_task8.tf](https://github.com/pmaximp/devops-education/blob/main/Module_2/Homework_3/Task_8/resolved_task8.tf) и скрин. Ошибка заключалась в попытке обращения к `host -> network_interface -> [index] -> nat_ip_address -> и тут найти ключ platform_id=host -> platform_id`. Чего, конечно быть не может, т.к. такого ключа в списке network_interface нет. Терраформ подсветил ошибку, указав, что она находится на 3 строке сверху, 85-86 символ.
+Прикладываю исправленный файл шаблона [resolved_task8.tf](https://github.com/pmaximp/devops-education/blob/main/Module_2/Homework_3/Task_8/resolved_task8.tftpl) и скрин. Ошибка заключалась в попытке обращения к `host -> network_interface -> [index] -> nat_ip_address -> и тут найти ключ platform_id=host -> platform_id`. Чего, конечно быть не может, т.к. такого ключа в списке network_interface нет. Терраформ подсветил ошибку, указав, что она находится на 3 строке сверху, 85-86 символ.
 
 ![alt text](https://github.com/pmaximp/devops-education/raw/main/Module_2/Homework_3/Task_8/images/image8.png)
 
