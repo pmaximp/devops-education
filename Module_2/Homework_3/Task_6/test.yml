@@ -1,0 +1,36 @@
+---
+- name: test
+  gather_facts: false
+  hosts: webservers, database, storage
+  vars:
+    ansible_ssh_user: ubuntu
+  become: yes
+
+  pre_tasks:
+    - name: Validating the ssh port is open and
+      wait_for:
+        host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
+        port: 22
+        delay: 5
+        timeout: 900
+        state: started
+        search_regex: OpenSSH
+
+  tasks:
+    - name: Pit web servers
+      when: inventory_hostname in groups['webservers'] and secrets[inventory_hostname] is defined
+      copy:
+        dest: /tmp/about.pin
+        content: "### this {{ secrets[inventory_hostname] }} in Web Server ###"
+    
+    - name: Pit database servers
+      when: inventory_hostname in groups['database'] and secrets[inventory_hostname] is defined
+      copy:
+        dest: /tmp/about.pin
+        content: "### this {{ secrets[inventory_hostname] }} in Database Server ###"
+        
+    - name: Pit storage servers
+      when: inventory_hostname in groups['storage'] and secrets[inventory_hostname] is defined
+      copy:
+        dest: /tmp/about.pin
+        content: "### this {{ secrets[inventory_hostname] }} in Storage Server ###"
