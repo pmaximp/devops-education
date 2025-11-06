@@ -3,3 +3,4 @@
 *.tfstate.*
 .terraform*
 !Homework_1/Task_1/*.tfstate
+personal.auto.tfvars
