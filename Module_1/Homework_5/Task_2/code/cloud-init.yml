@@ -1,0 +1,27 @@
+#cloud-config
+
+groups:
+  - docker
+
+users:
+  - name: ${user}
+    groups: [sudo, docker]
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ${ssh_public_key}
+
+package_update: true
+packages:
+  - ca-certificates
+  - curl
+  - lsb-release
+  - python3-pip
+
+runcmd:
+  - sudo pip install docker jsondiff
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update -y
+  - sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  - sudo systemctl enable --now docker
