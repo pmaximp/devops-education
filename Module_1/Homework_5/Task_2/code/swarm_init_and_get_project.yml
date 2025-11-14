@@ -1,0 +1,87 @@
+---
+# Ожидание готовности ВМ (большие тайм-ауты из-за минимальных ВМ)
+- name: Check access and install need module
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Pause before ssh connect
+      pause:
+        seconds: 70
+
+    - name: Validating the ssh port is open and
+      wait_for:
+        host: "{{ ansible_host }}"
+        port: 22
+        delay: 30
+        timeout: 90
+        state: started
+        connect_timeout: 30
+
+    - name: Pause for end job on cloud-init
+      pause:
+        seconds: 100
+
+# Создаем docker swarm cluster(master)
+- name: Init docker swarm
+  gather_facts: false
+  hosts: swarm_master
+  tasks:
+    - name: Init swarm master
+      docker_swarm:
+        state: present
+      register: swarm_init_result
+
+    - name: Set fact for added worker node
+      set_fact:
+        swarm_join_command: "{{ swarm_init_result.swarm_facts.JoinTokens.Worker }}"
+
+# Добавляем воркеры в кластер
+- name: Init docker swarm
+  gather_facts: false
+  hosts: swarm_node
+  tasks:
+    - name: Add swarm worker
+      docker_swarm:
+        state: join
+        remote_addrs:
+          ["{{ hostvars[groups['swarm_master'][0]]['ansible_host'] }}:2377"]
+        join_token: "{{ hostvars[groups['swarm_master'][0]]['swarm_join_command'] }}"
+
+# Загружаем проект на сервер и собираем docker image
+- name: Get project my_app
+  gather_facts: false
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Get project from git
+      git:
+        repo: "https://github.com/pmaximp/shvirtd-example-python.git"
+        dest: /opt/m1_hw5_perman
+        force: yes
+
+    - name: Build docker image
+      community.docker.docker_image_build:
+        name: my_app
+        tag: latest
+        path: /opt/m1_hw5_perman/
+        dockerfile: Dockerfile.python
+
+# Запускаем проект в кластере
+- name: Setup project my_app
+  gather_facts: false
+  hosts: swarm_master
+  become: yes
+  become_user: root
+  tasks:
+    - name: Start project
+      community.docker.docker_stack:
+        state: present
+        name: my_app
+        compose:
+          - /opt/m1_hw5_perman/compose-swarm.yaml
+      environment:
+        MYSQL_ROOT_PASSWORD: "{{ MYSQL_ROOT_PASSWORD }}" # Создаются в terraform
+        MYSQL_DATABASE: virtd
+        MYSQL_USER: app
+        MYSQL_PASSWORD: "{{ MYSQL_PASSWORD }}" # Создаются в terraform
